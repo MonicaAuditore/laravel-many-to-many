@@ -13,18 +13,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('post_technology_new', function (Blueprint $table) {
+        Schema::create('post_technology', function (Blueprint $table) {
             $table->unsignedBigInteger('post_id')->nullable();
 
             $table->foreign('post_id')
                 ->references('id')
-                ->on('posts');
+                ->on('posts')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
             $table->unsignedBigInteger('technology_id')->nullable();
 
             $table->foreign('technology_id')
                 ->references('id')
-                ->on('technologies');
+                ->on('technologies')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
 
             $table->primary(['post_id', 'technology_id']);
         });
