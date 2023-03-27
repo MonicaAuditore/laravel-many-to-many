@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('technologies', function (Blueprint $table) {
-            $table->id();
-            $table->string('type')->default('web');
-            $table->timestamps();
+        Schema::table('technologies', function (Blueprint $table) {
+            //
         });
     }
 
@@ -27,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('technologies');
+        Schema::table('technologies', function (Blueprint $table) {
+            //
+        });
     }
 };
