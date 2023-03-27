@@ -50,9 +50,11 @@ class TechnologyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Technology $technology)
-    {
-        return view('admin.technologies.index', compact('technology'));
-    }
+{
+    return view('admin.technologies.show', [
+        'technology' => $technology,
+    ]);
+}
 
     /**
      * Show the form for editing the specified resource.

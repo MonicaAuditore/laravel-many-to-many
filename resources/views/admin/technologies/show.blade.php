@@ -1,4 +1,4 @@
-a@extends('layouts.admin')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container-fluid mt-4">
@@ -19,7 +19,7 @@ a@extends('layouts.admin')
             <ul>
                 @foreach ($technology->posts as $post)
                 <li>
-                    <a href="{{ route('admin.tecnologies.show', $post->id) }}">{{ $post->title }}</a>
+                    <a href="{{ route('admin.technologies.show', $post->id) }}">{{ $post->title }}</a>
                 </li>
                 @endforeach
             </ul>
