@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 
 // Models
 use App\Models\Category;
+use App\Models\Technology;
 
 class PostController extends Controller
 {
@@ -35,7 +36,9 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.posts.create', compact('categories'));
+        $technologies = Technology::all();
+
+        return view('admin.posts.create', compact('categories', 'technologies'));
     }
 
     /**
@@ -85,7 +88,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::all();
+        $technologies = Technology::all();
+
+        return view('admin.posts.edit', compact('post', 'categories', 'technologies'));
     }
 
     /**

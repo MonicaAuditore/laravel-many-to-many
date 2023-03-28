@@ -49,6 +49,24 @@
                 </div>
 
                 <div class="mb-3">
+                    <label>
+                        tecnologia
+                    </label>
+                    
+                        @foreach ($technologies as $technology)
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">{{ $technology->name }}</label>
+                          </div> 
+                                
+                            
+                        @endforeach
+                       
+                       
+                    
+                </div>
+
+                <div class="mb-3">
                     <label for="img" class="form-label">Immagine del progetto</label>
                     <input 
                     type="file" 
