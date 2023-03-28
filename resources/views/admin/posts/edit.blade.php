@@ -45,10 +45,19 @@
                     
                         @foreach ($technologies as $technology)
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="technologies[]" type="checkbox" id="{{ $technology->id }}"
+                            <input 
+                            class="form-check-input" 
+                            name="technologies[]" 
+                            type="checkbox" 
+                            id="{{ $technology->id }}"
+                            @if (old('technologies') && is_array(old('technologies')) > 0)
                             {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}
+                            @elseif($post->tags->contains($tag->id))
+                            checked
+                            @endif
                             value="{{ $technology->id }}">
-                            <label class="form-check-label" for="{{ $technology->id }}">{{ $technology->name }}</label>
+                            <label class="form-check-label" for="{{ $technology->id }}">
+                                {{ $technology->name }}</label>
                           </div> 
                                 
                             
