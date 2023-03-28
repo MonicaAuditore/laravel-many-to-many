@@ -26,7 +26,8 @@ class StorePostRequest extends FormRequest
         return [
                 'title'=> 'required|unique:posts,title|max:128',
                 'content'=>'required',
-                'img'=>'nullable|image|max:2048'
+                'img'=>'nullable|image|max:2048',
+                'technology'=>'nullable|array|exists:technology,id|'
         ];
     }
 }

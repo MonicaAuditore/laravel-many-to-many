@@ -66,6 +66,11 @@ class PostController extends Controller
         'img'=> $data['img'],
        ]);
 
+       foreach ($data['technologies'] as $technologyId) {
+        $newProject->technology()->attach($technologyId);
+       }
+       
+
        return redirect()->route('admin.posts.show', $newProject->id)->with('success', 'Progetto aggiunto con successo');
     }
 

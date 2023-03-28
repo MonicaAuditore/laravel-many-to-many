@@ -37,6 +37,27 @@
                     <label for="content" class="form-label">Spiegazione del progetto *</label>
                     <textarea class="form-control" name="content" id="content" rows="15" required placeholder="Inserisci la spiegazione del progetto...">{{ old('content', $post->content) }}</textarea>
                 </div>
+
+                <div class="mb-3">
+                    <label>
+                        tecnologia
+                    </label>
+                    
+                        @foreach ($technologies as $technology)
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" name="technologies[]" type="checkbox" id="{{ $technology->id }}"
+                            {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}
+                            value="{{ $technology->id }}">
+                            <label class="form-check-label" for="{{ $technology->id }}">{{ $technology->name }}</label>
+                          </div> 
+                                
+                            
+                        @endforeach
+                       
+                       
+                    
+                </div>
+
                 <div class="mb-3">
                     <label for="img" class="form-label">Immagine del progetto</label>
 
