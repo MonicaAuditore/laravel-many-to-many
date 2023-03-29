@@ -27,7 +27,9 @@ class StorePostRequest extends FormRequest
                 'title'=> 'required|unique:posts,title|max:128',
                 'content'=>'required',
                 'img'=>'nullable|image|max:2048',
-                'technology'=>'nullable|array|exists:technology,id|'
+                'category_id' => 'nullable|integer',
+                'technologies' => 'nullable|array|exists:technologies,id',
+
         ];
     }
 }

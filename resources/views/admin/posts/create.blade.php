@@ -52,7 +52,7 @@
                     <label>
                         tecnologia
                     </label>
-                    
+                    {{-- le checkbox se non sono cliccate non arriva niente e da errore --}}
                         @foreach ($technologies as $technology)
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" name="technologies[]" type="checkbox" id="{{ $technology->id }}"

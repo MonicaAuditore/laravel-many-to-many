@@ -21,11 +21,10 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories = [
-            'html',
-            'css',
-            'javascript', 
-            'vue',
-            'laravel'
+            'categoria uno',
+            'categoria due',
+            'categoria tre', 
+            
         ];
 
         foreach ($categories as $category) {

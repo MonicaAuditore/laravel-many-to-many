@@ -52,7 +52,9 @@
                             id="{{ $technology->id }}"
                             @if (old('technologies') && is_array(old('technologies')) > 0)
                             {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}
-                            @elseif($post->tags->contains($tag->id))
+
+                            {{-- questa technologies non è l'array su cui ciclo sopra ma è la funzione technologies di post --}}
+                            @elseif($post->technologies->contains($technology->id))
                             checked
                             @endif
                             value="{{ $technology->id }}">

@@ -50,6 +50,8 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
        $data = $request->validate($request->rules());
+// dd($data);
+      
 
        if(array_key_exists('img', $data)) {
         $imgPath = Storage::put('uploads', $data['img']);
@@ -64,10 +66,11 @@ class PostController extends Controller
         'slug'=> $slug,
         'content'=> $data['content'],
         'img'=> $data['img'],
+        'category_id'=> $data['category_id']
        ]);
 
        foreach ($data['technologies'] as $technologyId) {
-        $newProject->technology()->attach($technologyId);
+        $newProject->technologies()->attach($technologyId);
        }
        
 
@@ -80,8 +83,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Post $post) // la variabile post è un'istanza della classe/model Post;
+
     {
+        //nel model di post è presente la funzione per recuperarmi i dati delle tabelle con cui post ha relazione
         return view('admin.posts.show', compact('post'));
     }
 
