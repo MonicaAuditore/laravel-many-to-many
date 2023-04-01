@@ -70,7 +70,7 @@
 
                 <div class="mb-3">
                     <label for="img" class="form-label">Immagine del progetto</label>
-                    <input 
+                    <input required
                     type="file" 
                     class="form-control" 
                     name="img" 

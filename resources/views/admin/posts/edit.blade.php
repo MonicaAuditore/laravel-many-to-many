@@ -82,13 +82,13 @@
                     </div>
 
                     <div class="mb-2">
-                        <img src="{{ asset('storage/'.$post->img) }}" style="height: 250px;" alt="">
+                        <img  src="{{ asset('storage/'.$post->img) }}" style="height: 250px;" alt="">
                     </div>
                     @endif
 
                    
 
-                    <input 
+                    <input required
                     type="file" 
                     class="form-control" 
                     name="img" 
